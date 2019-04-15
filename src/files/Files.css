@@ -1,0 +1,26 @@
+.Filename {
+  font-size: 16px;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Row {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.StringName {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 36px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

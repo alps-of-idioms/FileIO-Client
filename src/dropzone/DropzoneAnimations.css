@@ -1,0 +1,41 @@
+.item-fill-enter {
+  /* display: inline-block; */
+  /* transform: translate(-50%, -100%); */
+  opacity: 0;
+}
+
+.item-fill-enter-active {
+  display: inline-block;
+  transition: opacity 0.5s linear 0.5s;
+  opacity: 1;
+  /* transform: translate(0%, 0%); */
+}
+
+.item-fill-enter-done {
+  display: inline-block;
+  /* transition: opacity 0.5s linear; */
+  opacity: 1;
+  /* transform: translate(0%, 0%); */
+}
+
+/* EXIT FILL*/
+
+.item-fill-exit {
+  display: inline-block;
+  /* transform: translate(0%, 0%); */
+  /* transition: all 0.5s; */
+  opacity: 1;
+}
+
+.item-fill-exit-active {
+  display: inline-block;
+  transition: opacity 0.5s linear 0.5s;
+  opacity: 0;
+  /* transform: translate(100%, -100%); */
+}
+
+.item-fill-exit-done {
+  opacity: 0;
+  /* display: inline-block; */
+  /* transform: translate(50%, -100%);*/
+}

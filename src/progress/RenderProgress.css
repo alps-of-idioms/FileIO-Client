@@ -1,0 +1,11 @@
+.CheckIcon {
+  opacity: 0.5;
+  margin-left: 12px;
+}
+
+.ProgressWrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}

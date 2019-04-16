@@ -5,10 +5,11 @@
   flex-wrap: wrap;
   padding-right: 0;
   margin-right: 6px;
-  /* padding-left: -2px;
-  padding-right: -2px; */
+  overflow: hidden;
+}
+
+.IconContainer:hover {
   overflow-y: auto;
-  /* border: 1px solid black; */
 }
 
 .IconTextWrapper {
@@ -106,16 +107,6 @@
 .IconTextWrapper:hover:after {
   transform: scale(1);
 }
-
-.IconContainer {
-  /* background: yellow; */
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* .IconContainer::-webkit-scrollbar {
-  width: 4px;
-} */
 
 .IconContainer:hover::-webkit-scrollbar {
   width: 4px;

@@ -24,8 +24,8 @@
 .Dropzone:hover {
   transform: scale(0.95);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset,
-    0 6px 20px 0 rgba(0, 0, 0, 0.19) inset;
-  background: rgba(245, 245, 245, 0.103);
+    0 6px 20px 0 rgba(0, 0, 0, 0.2) inset;
+  background: rgba(206, 213, 223, 0.2);
 }
 
 .Icon {
@@ -52,15 +52,15 @@
 }
 
 .item-wrapper-appear-active {
-  transition: opacity 0.5s linear;
+  transition: opacity 2s linear;
   opacity: 1;
 }
 
-.item-wrapped-appear-done {
+.item-wrapper-appear-done {
   opacity: 1;
 }
 
-/* ITEM-WRAPPED-enter*/
+/* ITEM-WRAPPED-ENTER*/
 
 .item-wrapper-enter {
   /* transform: translate(100%, 50%); */
@@ -68,17 +68,12 @@
 }
 
 .item-wrapper-enter-active {
-  /* transition: opacity 5s linear; */
+  /* transition: opacity 1s linear;
+  opacity: 1; */
   /* transform: translate(100%, 50%); */
-  /*  opacity: 1; */
 }
 
-.item-wrapper-enter-done {
-  /* transform: translate(0%, 0%); */
-  /* opacity: 1; */
-}
-
-/* ITEM-WRAPPED-enter*/
+/* ITEM-WRAPPED-EXIT*/
 
 .item-wrapper-exit {
   /* transform: translate(0%, 0%); */

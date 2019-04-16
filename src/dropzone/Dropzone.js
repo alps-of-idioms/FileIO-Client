@@ -11,12 +11,11 @@ export default class Dropzone extends Component {
     onFilesAdded: PropTypes.func,
     filesLength: PropTypes.number
   };
+  fileInputRef = React.createRef();
 
   state = {
     hightlight: false
   };
-
-  fileInputRef = React.createRef();
 
   onDragOver = e => {
     e.preventDefault();
@@ -80,12 +79,12 @@ export default class Dropzone extends Component {
         onClick={this.openFileDialog}
         style={{ cursor: disabled ? "default" : "pointer" }}
       >
-        {/* <TransitionGroup component={null}> */}
         {filesLength > 0 ? (
           <DropzonePrev />
         ) : (
           <CSSTransition
-            timeout={5000}
+            timeout={2000}
+            unmountOnExit
             in={filesLength === 0}
             appear={filesLength === 0}
             classNames="item-wrapper"
@@ -93,13 +92,11 @@ export default class Dropzone extends Component {
             <div className="Dropzone">
               <img src={logo} className="Icon" alt="upload" />
               <span className="Text">
-                Click on the area or Drag'n-Drop your file to the area for
-                upload
+                Click on the area or Drag'n-Drop your file to the area
               </span>
             </div>
           </CSSTransition>
         )}
-        {/*</TransitionGroup>*/}
         <input
           ref={this.fileInputRef}
           className="FileInput"

@@ -26,7 +26,7 @@
 
 .LineWrapper {
   font-family: "Roboto", sans-serif;
-  width: 52px;
+  width: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +113,11 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.IconContainer::-webkit-scrollbar {
+/* .IconContainer::-webkit-scrollbar {
+  width: 4px;
+} */
+
+.IconContainer:hover::-webkit-scrollbar {
   width: 4px;
 }
 

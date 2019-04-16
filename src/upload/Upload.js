@@ -27,18 +27,23 @@ export default class Upload extends Component {
   onFilesAdded = files => {
     let copy = { ...this.state.uploadProgress };
     files.forEach(file => {
-      copy[file.name] = {
-        state: "preload"
-      };
+      if (!copy[file.name]) {
+        copy[file.name] = {
+          state: "preload"
+        };
+      }
     });
 
     this.setState(prevState => {
       let filterFiles = files.filter(file => {
         for (let k of prevState.files) {
-          return file.name !== k.name;
+          if (file.name === k.name) {
+            return false;
+          }
         }
         return true;
       });
+
       return {
         files: prevState.files.concat(filterFiles),
         uploadProgress: copy
@@ -148,28 +153,14 @@ export default class Upload extends Component {
   };
 
   render() {
-    console.log(this.state.files);
+    console.log(this.state.files, "CURRENT FILES");
     console.log(this.state.links);
     const { files, uploading, links, uploadedFiles } = this.state;
-
-    let fileList = files.map(file => {
-      return (
-        <Files
-          key={(Math.random() * 100).toString(36)}
-          file={file}
-          uploadProgress={this.state.uploadProgress[file.name]}
-          deleteFile={this.deleteFile}
-          uploading={this.state.uploading}
-        />
-      );
-    });
 
     let mapFiles = (files => {
       return files.map(file => {
         return {
-          id: Math.random()
-            .toFixed(5)
-            .toString(36),
+          id: file.name,
           name: file.name,
           size: file.size,
           type: file.type
@@ -188,7 +179,12 @@ export default class Upload extends Component {
               filesLength={files.length}
             />
           </Provider>
-          <div className="Files">{fileList}</div>
+          <Files
+            files={files}
+            uploadProgress={this.state.uploadProgress}
+            deleteFile={this.deleteFile}
+            uploading={this.state.uploading}
+          />
         </div>
         <Buttons
           lengthOfFiles={files.length}

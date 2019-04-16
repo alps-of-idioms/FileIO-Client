@@ -1,0 +1,26 @@
+.item-appear {
+  /* opacity: 0; */
+  transform: scale(0) rotate(-180deg);
+}
+.item-appear-active {
+  /* opacity: 1; */
+  transition: transform 200ms linear;
+  transform: scale(1) rotate(0deg);
+}
+
+.item-enter {
+  transform: scale(0) rotate(-180deg);
+}
+.item-enter-active {
+  /* opacity: 1; */
+  transform: scale(1) rotate(0deg);
+  transition: transform 200ms ease-in;
+}
+
+.item-exit {
+  transform: scale(1) rotate(0deg);
+}
+.item-exit-active {
+  transform: scale(0) rotate(-180deg);
+  transition: transform 200ms ease-in;
+}

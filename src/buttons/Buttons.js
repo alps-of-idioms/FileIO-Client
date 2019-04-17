@@ -24,7 +24,7 @@ const Buttons = ({
 
         <button
           className="Button"
-          disabled={lengthOfFiles === 0}
+          disabled={lengthOfFiles === 0 || uploading}
           onClick={clearStateHandler}
         >
           Clear

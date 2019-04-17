@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import DropzonePrev from "./DropzonePrev";
 import { CSSTransition /* TransitionGroup */ } from "react-transition-group";
 import "./Dropzone.css";
+import classNames from "classnames";
 import logo from "./baseline-cloud_upload-24px.svg";
 
 export default class Dropzone extends Component {
@@ -67,12 +68,15 @@ export default class Dropzone extends Component {
   render() {
     //console.dir(this.fileInputRef);
     const { filesLength, disabled } = this.props;
+    const { hightlight } = this.state;
     /* console.log(filesLength, filesLength === 0, "FILES LENGTH"); */
+    const classes = classNames({
+      DropzoneContainer: true,
+      Highlight: hightlight
+    });
     return (
       <div
-        className={`DropzoneContainer ${
-          this.state.hightlight ? "Highlight" : ""
-        }`}
+        className={classes}
         onDragOver={this.onDragOver}
         onDragLeave={this.onDragLeave}
         onDrop={this.onDrop}

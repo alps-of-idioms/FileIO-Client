@@ -1,17 +1,17 @@
 .DropzoneContainer {
   display: flex;
-  height: 200px;
-  width: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  min-width: 200px;
+  max-width: 200px;
   background-color: #fff;
   border: 2px dashed rgb(187, 186, 186);
   border-radius: 5%;
-  position: relative;
-  overflow: hidden;
 }
 
 .Dropzone {
   height: 100%;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 5%;
   display: flex;
   align-items: center;

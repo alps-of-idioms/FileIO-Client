@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/fileioclient/static/media/file-24px.55ba2a2c.svg"
   },
   {
-    "revision": "36c142a7140355a5d4f7",
-    "url": "/fileioclient/static/css/main.1a3f6e22.chunk.css"
+    "revision": "ddcc9a560aa3c681a935",
+    "url": "/fileioclient/static/css/main.f0cadff0.chunk.css"
   },
   {
     "revision": "986575748c7f6303322b",
@@ -16,16 +16,16 @@ self.__precacheManifest = [
     "url": "/fileioclient/static/media/baseline-delete-24px.d36bd4a7.svg"
   },
   {
-    "revision": "03cdfe9f46177841c1e1",
-    "url": "/fileioclient/static/js/2.c9576519.chunk.js"
+    "revision": "e0264f9c34017ea01b32",
+    "url": "/fileioclient/static/js/2.534436dc.chunk.js"
   },
   {
     "revision": "60f0926cc9035d2e9b420ccff93e8b60",
     "url": "/fileioclient/static/media/image-24px.60f0926c.svg"
   },
   {
-    "revision": "36c142a7140355a5d4f7",
-    "url": "/fileioclient/static/js/main.40d4ba0b.chunk.js"
+    "revision": "ddcc9a560aa3c681a935",
+    "url": "/fileioclient/static/js/main.808d1136.chunk.js"
   },
   {
     "revision": "6e077dbf1956de2539771404f65a8499",
@@ -44,11 +44,11 @@ self.__precacheManifest = [
     "url": "/fileioclient/static/media/baseline-check_circle-24px.bb0534c8.svg"
   },
   {
-    "revision": "03cdfe9f46177841c1e1",
+    "revision": "e0264f9c34017ea01b32",
     "url": "/fileioclient/static/css/2.684280e5.chunk.css"
   },
   {
-    "revision": "4c37edb4bbb6c2351dece1a67d231db8",
+    "revision": "44fec7d814d0f53c3ab1baf16ae87b04",
     "url": "/fileioclient/index.html"
   }
 ];

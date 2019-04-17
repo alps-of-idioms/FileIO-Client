@@ -5,6 +5,8 @@
   padding-right: 0;
   margin-right: 6px;
   overflow: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: black rgba(0, 0, 0, 0.2);
 }
 
 .IconContainer:hover {
@@ -19,7 +21,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding-left: 2px;
-  /* padding-bottom: 4px; */
   margin-left: 4px;
   position: relative;
 }
@@ -107,7 +108,7 @@
   transform: scale(1);
 }
 
-.IconContainer:hover::-webkit-scrollbar {
+.IconContainer::-webkit-scrollbar {
   width: 4px;
 }
 

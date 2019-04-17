@@ -52,7 +52,6 @@ export default class Dropzone extends Component {
   onFilesAdded = e => {
     if (this.props.disabled) return;
     const files = e.target.files;
-    /* console.log(files, "файлы"); */
     if (this.props.onFilesAdded) {
       const array = this.fileListToArray(files);
       this.props.onFilesAdded(array);
@@ -61,15 +60,12 @@ export default class Dropzone extends Component {
 
   openFileDialog = () => {
     if (this.props.disabled) return;
-    // console.dir(this.fileInputRef);
     this.fileInputRef.current.click();
   };
 
   render() {
-    //console.dir(this.fileInputRef);
     const { filesLength, disabled } = this.props;
     const { hightlight } = this.state;
-    /* console.log(filesLength, filesLength === 0, "FILES LENGTH"); */
     const classes = classNames({
       DropzoneContainer: true,
       Highlight: hightlight

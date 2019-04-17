@@ -1,7 +1,9 @@
 import React from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import RenderProgress from "../progress/RenderProgress";
 import clear from "./baseline-delete-24px.svg";
 import "./Files.css";
+import "./FilesAnimations.css";
 
 const File = ({ fileName, uploading, uploadProgress, deleteFile }) => {
   return (
@@ -16,6 +18,7 @@ const File = ({ fileName, uploading, uploadProgress, deleteFile }) => {
           src={clear}
           alt="delete_icon"
           onClick={() => deleteFile(fileName)}
+          className="DeleteIcon"
         />
         <span className="Filename">{fileName}</span>
       </div>
@@ -26,19 +29,26 @@ const File = ({ fileName, uploading, uploadProgress, deleteFile }) => {
 
 const Files = ({ files, uploadProgress, uploading, deleteFile }) => {
   return (
-    <div className="Files">
+    <TransitionGroup className="Files">
       {files.map(file => {
         return (
-          <File
+          <CSSTransition
             key={file.name}
-            fileName={file.name}
-            uploadProgress={uploadProgress[file.name]}
-            uploading={uploading}
-            deleteFile={deleteFile}
-          />
+            appear={true}
+            timeout={300}
+            classNames="file"
+          >
+            <File
+              key={file.name}
+              fileName={file.name}
+              uploadProgress={uploadProgress[file.name]}
+              uploading={uploading}
+              deleteFile={deleteFile}
+            />
+          </CSSTransition>
         );
       })}
-    </div>
+    </TransitionGroup>
   );
 };
 

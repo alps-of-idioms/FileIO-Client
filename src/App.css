@@ -10,6 +10,7 @@
 }
 
 .Card {
+  transition: height 2s ease-in;
   background-color: white;
   padding: 32px;
   width: 50%;

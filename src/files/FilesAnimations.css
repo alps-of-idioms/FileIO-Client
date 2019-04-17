@@ -1,0 +1,57 @@
+.file-enter .StringName {
+  opacity: 0;
+  transform: translateY(7px);
+}
+
+.file-enter .ProgressWrapper {
+  opacity: 0;
+  transform: translateY(-7px);
+}
+
+.file-enter-active .StringName {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transform: translateY(0px);
+}
+
+.file-enter-active .ProgressWrapper {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transform: translateY(0px);
+}
+
+/* .file-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+} */
+
+.file-exit .StringName {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.file-exit .ProgressWrapper {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.file-exit-active .StringName {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transform: translateY(7px);
+}
+
+.file-exit-active .ProgressWrapper {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transform: translateY(-7px);
+}
+
+/* .file-exit {
+  opacity: 1;
+}
+.file-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+ */

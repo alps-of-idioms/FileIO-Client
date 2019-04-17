@@ -5,6 +5,7 @@ import video from "./icons/videocam-24px.svg";
 /* import folder from './icons/folder-24px.svg' */
 
 function checkFileType(string) {
+  if (!string) return doc;
   let str = string.match(/\w+/)[0];
   switch (str) {
     case "image":

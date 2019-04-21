@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import checkline from "./baseline-check_circle-24px.svg";
 import Progress from "./Progress";
 import "./RenderProgress.css";
@@ -20,6 +21,11 @@ const RenderProgress = ({ uploadProgress, uploading }) => {
       />
     </div>
   );
+};
+
+Progress.propTypes = {
+  uploadProgress: PropTypes.object,
+  uploading: PropTypes.bool
 };
 
 export default RenderProgress;

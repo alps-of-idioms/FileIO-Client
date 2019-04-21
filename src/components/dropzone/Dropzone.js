@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import logo from "./baseline-cloud_upload-24px.svg";
 import DropzonePrev from "./DropzonePrev";
-import { CSSTransition /* TransitionGroup */ } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
+import { connect } from "react-redux";
 import "./Dropzone.css";
 import classNames from "classnames";
-import logo from "./baseline-cloud_upload-24px.svg";
+import { filesAdded } from "../../actions/actions";
 
-export default class Dropzone extends Component {
+class Dropzone extends Component {
   static propTypes = {
     disabled: PropTypes.bool,
     onFilesAdded: PropTypes.func,
@@ -84,7 +86,6 @@ export default class Dropzone extends Component {
         ) : (
           <CSSTransition
             timeout={2000}
-            unmountOnExit
             in={filesLength === 0}
             appear={filesLength === 0}
             classNames="item-wrapper"
@@ -108,3 +109,26 @@ export default class Dropzone extends Component {
     );
   }
 }
+
+const mapStateToProps = (
+  { files, uploading, successfullUploaded },
+  ownProps
+) => {
+  return {
+    filesLength: files.length,
+    disabled: uploading || successfullUploaded
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onFilesAdded: files => {
+      dispatch(filesAdded(files));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Dropzone);

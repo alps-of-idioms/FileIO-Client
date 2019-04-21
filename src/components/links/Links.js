@@ -1,10 +1,16 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Tooltip from "../tooltip/Tooltip";
+import { connect } from "react-redux";
 import "./Links.css";
 
-export default class Links extends React.Component {
+class Links extends React.Component {
   state = {
     isCopied: false
+  };
+
+  static propTypes = {
+    links: PropTypes.arrayOf(PropTypes.string)
   };
 
   copyAllLinks = links => {
@@ -52,3 +58,11 @@ export default class Links extends React.Component {
     );
   }
 }
+
+const mapStateToProps = ({ links }, ownProps) => {
+  return {
+    links
+  };
+};
+
+export default connect(mapStateToProps)(Links);

@@ -1,0 +1,21 @@
+export const FILES_ADDED = "FILES_ADDED";
+
+export const FILE_REMOVED = "FILE_REMOVED";
+
+export const CLEAR_STATE = "CLEAR_STATE";
+
+export const UPLOAD_START = "UPLOAD_START";
+
+export const UPLOAD_SUCCESSFUL = "UPLOAD_SUCCESSFUL";
+
+export const UPLOAD_FAILED = "UPLOAD_FAILED";
+
+export const PROGRESS_CHANGED = "PROGRESS_CHANGED";
+
+export const PROGRESS_CHANGED_DONE = "PROGRESS_CHANGED_DONE";
+
+export const PROGRESS_CHANGED_FAIL = "PROGRESS_CHANGED_FAIL";
+
+export const CLOSE_MODAL = "CLOSE_MODAL";
+
+export const OPEN_MODAL = "OPEN_MODAL";

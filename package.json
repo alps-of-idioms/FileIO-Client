@@ -15,6 +15,7 @@
     "react-modal": "^3.8.1",
     "react-scripts": "2.1.8",
     "react-transition-group": "^2.9.0",
+    "redux-thunk": "^2.3.0",
     "stylus": "^0.54.5"
   },
   "scripts": {
@@ -32,5 +33,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6"
+  }
 }

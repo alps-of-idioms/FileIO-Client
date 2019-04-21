@@ -1,9 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import RenderProgress from "../progress/RenderProgress";
 import clear from "./baseline-delete-24px.svg";
 import "./Files.css";
 import "./FilesAnimations.css";
+import { fileRemoved } from "../../actions/actions";
+import { connect } from "react-redux";
 
 const File = ({ fileName, uploading, uploadProgress, deleteFile }) => {
   return (
@@ -51,5 +54,30 @@ const Files = ({ files, uploadProgress, uploading, deleteFile }) => {
     </TransitionGroup>
   );
 };
+Files.propTypes = {
+  files: PropTypes.array,
+  uploadProgress: PropTypes.object,
+  uploading: PropTypes.bool,
+  deleteFile: PropTypes.func
+};
 
-export default Files;
+const mapStateToProps = ({ files, uploadProgress, uploading }, ownProps) => {
+  return {
+    files,
+    uploadProgress,
+    uploading
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    deleteFile: name => {
+      dispatch(fileRemoved(name));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Files);
